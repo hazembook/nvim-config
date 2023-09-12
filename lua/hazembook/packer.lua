@@ -22,8 +22,11 @@ return require('packer').startup(function(use)
     }
 
     use 'ThePrimeagen/harpoon'
+
     use 'mbbill/undotree'
+
     use 'tpope/vim-fugitive'
+
     use 'nvim-treesitter/nvim-treesitter-context'
 
     use {
@@ -62,8 +65,12 @@ return require('packer').startup(function(use)
             }
         end
     })
+
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+
+
+    use { "ellisonleao/gruvbox.nvim" }
 end)
