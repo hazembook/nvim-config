@@ -1,3 +1,3 @@
+require("hazembook.lazy")
 require("hazembook.remap")
 require("hazembook.set")
-require("hazembook.packer")
