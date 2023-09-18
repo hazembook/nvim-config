@@ -89,4 +89,6 @@ require('lazy').setup({
         event = "InsertEnter",
         opts = {} -- this is equalent to setup({}) function
     },
+
+    "fatih/vim-go"
 })
