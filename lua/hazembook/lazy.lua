@@ -26,7 +26,7 @@ require('lazy').setup({
         -- end,
     },
 
-    { "ellisonleao/gruvbox.nvim", priority = 1000 },
+    { "morhetz/gruvbox", priority = 1000 },
 
     {
         'nvim-telescope/telescope.nvim',
