@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>xe", vim.cmd.bdelete)
 vim.keymap.set("n", "<leader>w", ":w<CR>")
-vim.keymap.set("n", "<leader>wq", ":wq<CR>")
+vim.keymap.set("n", "<leader>wq", ":x<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>qq", ":q!<CR>")
 
