@@ -92,5 +92,7 @@ require('lazy').setup({
         opts = {} -- this is equalent to setup({}) function
     },
 
-    "fatih/vim-go"
+    "fatih/vim-go",
+
+    "tpope/vim-commentary"
 })
