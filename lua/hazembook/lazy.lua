@@ -99,5 +99,7 @@ require('lazy').setup({
 
     "fatih/vim-go",
 
-    "tpope/vim-commentary"
+    "tpope/vim-commentary",
+
+    "hrsh7th/cmp-path"
 })
