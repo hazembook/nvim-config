@@ -99,7 +99,14 @@ require('lazy').setup({
 
     "fatih/vim-go",
 
-    "tpope/vim-commentary",
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
+
 
     "hrsh7th/cmp-path"
 })
