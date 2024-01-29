@@ -15,7 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    { "morhetz/gruvbox", priority = 1000 },
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
     {
         'nvim-telescope/telescope.nvim',
