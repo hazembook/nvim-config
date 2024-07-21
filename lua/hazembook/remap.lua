@@ -47,7 +47,7 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- Flutter
-vim.keymap.set('n', '<leader>tf', ':Telescope flutter commands<CR>')
+vim.keymap.set('n', '<leader>fl', ':Telescope flutter commands<CR>')
 vim.keymap.set('n', '<leader>fR', ':FlutterRun<CR>')
 vim.keymap.set('n', '<leader>fr', ':FlutterReload<CR>')
 vim.keymap.set('n', '<leader>frr', ':FlutterRestart<CR>')
