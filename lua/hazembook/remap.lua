@@ -48,11 +48,3 @@ end)
 
 -- Flutter
 vim.keymap.set('n', '<leader>fl', ':Telescope flutter commands<CR>')
-vim.keymap.set('n', '<leader>fR', ':FlutterRun<CR>')
-vim.keymap.set('n', '<leader>fr', ':FlutterReload<CR>')
-vim.keymap.set('n', '<leader>frr', ':FlutterRestart<CR>')
-vim.keymap.set('n', '<leader>ft', ':FlutterOutlineToggle<CR>')
-vim.keymap.set('n', '<leader>fd', ':FlutterDevices<CR>')
-vim.keymap.set('n', '<leader>fe', ':FlutterEmulators<CR>')
-vim.keymap.set('n', '<leader>fc', ':FlutterClean<CR>')
-vim.keymap.set('n', '<leader>fq', ':FlutterQuit<CR>')
