@@ -19,6 +19,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>n", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "<leader>b", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
@@ -32,7 +34,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 -- Replace the language servers listed here
 -- with the ones installed in your system
-lsp.setup_servers({ 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'bashls', 'tsserver', 'html', 'texlab', 'zls' })
+lsp.setup_servers({ 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'bashls', 'ts_ls', 'html', 'texlab', 'zls' })
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
