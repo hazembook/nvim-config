@@ -87,11 +87,39 @@ require('lazy').setup({
 
     {
         "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
+        opts = {}, -- for default options, refer to the configuration section for custom setup.
+        cmd = "Trouble",
+        keys = {
+            {
+                "<leader>xx",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+            {
+                "<leader>xX",
+                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+                desc = "Buffer Diagnostics (Trouble)",
+            },
+            {
+                "<leader>cs",
+                "<cmd>Trouble symbols toggle focus=false<cr>",
+                desc = "Symbols (Trouble)",
+            },
+            {
+                "<leader>cl",
+                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+                desc = "LSP Definitions / references / ... (Trouble)",
+            },
+            {
+                "<leader>xL",
+                "<cmd>Trouble loclist toggle<cr>",
+                desc = "Location List (Trouble)",
+            },
+            {
+                "<leader>xQ",
+                "<cmd>Trouble qflist toggle<cr>",
+                desc = "Quickfix List (Trouble)",
+            },
         },
     },
 
@@ -157,27 +185,21 @@ require('lazy').setup({
         keys = {
             -- 👇 in this section, choose your own keymappings!
             {
-                "<leader>e",
-                function()
-                    require("yazi").yazi()
-                end,
-                desc = "Open the file manager",
+                "<leader>ee",
+                "<cmd>Yazi<cr>",
+                desc = "Open yazi at the current file",
             },
             {
                 -- Open in the current working directory
                 "<leader>cw",
-                function()
-                    require("yazi").yazi(nil, vim.fn.getcwd())
-                end,
+                "<cmd>Yazi cwd<cr>",
                 desc = "Open the file manager in nvim's working directory",
             },
             {
+                -- NOTE: this requires a version of yazi that includes
+                -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
                 '<c-up>',
-                function()
-                    -- NOTE: requires a version of yazi that includes
-                    -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-                    require('yazi').toggle()
-                end,
+                "<cmd>Yazi toggle<cr>",
                 desc = "Resume the last yazi session",
             },
         },
@@ -185,10 +207,9 @@ require('lazy').setup({
         opts = {
             -- if you want to open yazi instead of netrw, see below for more info
             open_for_directories = false,
-
-            -- enable these if you are using the latest version of yazi
-            -- use_ya_for_events_reading = true,
-            -- use_yazi_client_id_flag = true,
+            keymaps = {
+                show_help = '<f1>',
+            },
         },
     },
     -- nvim v0.8.0
