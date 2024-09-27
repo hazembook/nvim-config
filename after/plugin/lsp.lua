@@ -34,7 +34,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 -- Replace the language servers listed here
 -- with the ones installed in your system
-lsp.setup_servers({ 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'bashls', 'ts_ls', 'html', 'texlab', 'zls' })
+lsp.setup_servers({ 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'bashls', 'ts_ls', 'html', 'texlab', 'zls', 'ruby_lsp', 'rubocop' })
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
