@@ -150,6 +150,8 @@ require('lazy').setup({
         'Exafunction/codeium.vim',
         event = 'BufEnter',
         config = function()
+            -- disable codeium by default, enable it manually by running `:CodeiumEnable`
+            vim.g.codeium_enabled = false
             -- disable tab
             vim.g.codeium_no_map_tab = true
             -- Change '<C-g>' here to any keycode you like.
