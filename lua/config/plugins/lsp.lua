@@ -26,6 +26,13 @@ return {
       require("lspconfig").ruby_lsp.setup { capabilites = capabilities }
       require("lspconfig").rust_analyzer.setup { capabilites = capabilities }
       require("lspconfig").texlab.setup { capabilites = capabilities }
+      require("lspconfig").tinymist.setup {
+        capabilites = capabilities,
+        settings = {
+          formatterMode = "typstyle",
+          exportPdf = "never",
+        }
+      }
       require("lspconfig").zls.setup { capabilites = capabilities }
 
       vim.api.nvim_create_autocmd('LspAttach', {
