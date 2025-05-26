@@ -6,12 +6,7 @@ return {
 
   opts = {
     keymap = {
-      preset = 'default',
-
-      ['<Up>'] = { 'select_prev', 'fallback' },
-      ['<Down>'] = { 'select_next', 'fallback' },
-
-      ['<Tab>'] = { 'accept', 'fallback' },
+      preset = 'enter',
     },
 
     appearance = { nerd_font_variant = 'mono' },
