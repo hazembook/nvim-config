@@ -15,19 +15,19 @@ return {
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      require("lspconfig").bashls.setup { capabilites = capabilities }
-      require("lspconfig").clangd.setup { capabilites = capabilities }
-      require("lspconfig").denols.setup { capabilites = capabilities }
-      require("lspconfig").gopls.setup { capabilites = capabilities }
-      require("lspconfig").html.setup { capabilites = capabilities }
-      require("lspconfig").lua_ls.setup { capabilites = capabilities }
-      require("lspconfig").pyright.setup { capabilites = capabilities }
-      require("lspconfig").rubocop.setup { capabilites = capabilities }
-      require("lspconfig").ruby_lsp.setup { capabilites = capabilities }
-      require("lspconfig").rust_analyzer.setup { capabilites = capabilities }
-      require("lspconfig").texlab.setup { capabilites = capabilities }
+      require("lspconfig").bashls.setup { capabilities = capabilities }
+      require("lspconfig").clangd.setup { capabilities = capabilities }
+      require("lspconfig").denols.setup { capabilities = capabilities }
+      require("lspconfig").gopls.setup { capabilities = capabilities }
+      require("lspconfig").html.setup { capabilities = capabilities }
+      require("lspconfig").lua_ls.setup { capabilities = capabilities }
+      require("lspconfig").pyright.setup { capabilities = capabilities }
+      require("lspconfig").rubocop.setup { capabilities = capabilities }
+      require("lspconfig").ruby_lsp.setup { capabilities = capabilities }
+      require("lspconfig").rust_analyzer.setup { capabilities = capabilities }
+      require("lspconfig").texlab.setup { capabilities = capabilities }
       require("lspconfig").tinymist.setup {
-        capabilites = capabilities,
+        capabilities = capabilities,
         settings = {
           formatterMode = "typstyle",
           exportPdf = "never",
