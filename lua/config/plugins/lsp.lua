@@ -12,28 +12,34 @@ return {
         },
       },
     },
-    config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-      require("lspconfig").bashls.setup { capabilities = capabilities }
-      require("lspconfig").clangd.setup { capabilities = capabilities }
-      require("lspconfig").denols.setup { capabilities = capabilities }
-      require("lspconfig").gopls.setup { capabilities = capabilities }
-      require("lspconfig").html.setup { capabilities = capabilities }
-      require("lspconfig").lua_ls.setup { capabilities = capabilities }
-      require("lspconfig").pyright.setup { capabilities = capabilities }
-      require("lspconfig").rubocop.setup { capabilities = capabilities }
-      require("lspconfig").ruby_lsp.setup { capabilities = capabilities }
-      require("lspconfig").rust_analyzer.setup { capabilities = capabilities }
-      require("lspconfig").texlab.setup { capabilities = capabilities }
-      require("lspconfig").tinymist.setup {
-        capabilities = capabilities,
-        settings = {
-          formatterMode = "typstyle",
-          exportPdf = "never",
-        }
-      }
-      require("lspconfig").zls.setup { capabilites = capabilities }
+    opts = {
+      servers = {
+        bashls = {},
+        clangd = {},
+        denols = {},
+        gopls = {},
+        html = {},
+        lua_ls = {},
+        pyright = {},
+        rubocop = {},
+        ruby_lsp = {},
+        rust_analyzer = {},
+        texlab = {},
+        tinymist = {
+          settings = {
+            formatterMode = "typstyle",
+            exportPdf = "never",
+          },
+        },
+        zls = {},
+      },
+    },
+    config = function(_, opts)
+      local lspconfig = require('lspconfig')
+      for server, config in pairs(opts.servers) do
+        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
@@ -50,18 +56,18 @@ return {
             })
           end
 
-          local opts = { buffer = args.buf }
+          local keymap_opts = { buffer = args.buf }
 
-          vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-          vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
-          vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
-          vim.keymap.set("n", "<leader>vf", function() vim.diagnostic.open_float() end, opts)
-          vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-          vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
-          vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-          vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+          vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, keymap_opts)
+          vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, keymap_opts)
+          vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, keymap_opts)
+          vim.keymap.set("n", "<leader>vf", function() vim.diagnostic.open_float() end, keymap_opts)
+          vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, keymap_opts)
+          vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, keymap_opts)
+          vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, keymap_opts)
+          vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, keymap_opts)
         end,
       })
     end,
-  }
+  },
 }
