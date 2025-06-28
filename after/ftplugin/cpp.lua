@@ -1,1 +1,1 @@
-vim.cmd("setlocal tabstop=4 shiftwidth=4")
+vim.opt_local.cindent = true
