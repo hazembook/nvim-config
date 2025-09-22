@@ -18,6 +18,7 @@ return {
         clangd = {},
         denols = {},
         gopls = {},
+        harper_ls = {},
         html = {},
         lua_ls = {},
         pyright = {},
