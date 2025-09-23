@@ -43,3 +43,13 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set('n', '<leader>fl', ':Telescope flutter commands<CR>')
+
+
+vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
+vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end)
+vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end)
+vim.keymap.set("n", "<leader>vf", function() vim.diagnostic.open_float() end)
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
+vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end)
+vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
+vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
