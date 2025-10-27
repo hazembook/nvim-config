@@ -54,3 +54,18 @@ vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end)
 vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
+
+-- Map <leader>` to insert a multi-line code block
+--- Normal Mode Mapping
+vim.keymap.set("n", "<leader>`", "i```<CR>```<ESC>kA", {
+  noremap = true,
+  silent = true,
+  desc = "Insert markdown code block for language"
+})
+
+--- Insert Mode Mapping
+vim.keymap.set("i", "<leader>`", "```<CR>```<ESC>kA", {
+  noremap = true,
+  silent = true,
+  desc = "Insert markdown code block for language"
+})
