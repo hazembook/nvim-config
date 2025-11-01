@@ -29,6 +29,21 @@ return {
       vim.lsp.enable("texlab")
       vim.lsp.enable("tinymist")
       vim.lsp.enable("zls")
+
+      vim.diagnostic.config({
+        virtual_text = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+        float = {
+          focusable = false,
+          style = "minimal",
+          border = "rounded",
+          source = true,
+          header = "",
+          prefix = "",
+        },
+      })
     end,
   },
 }
