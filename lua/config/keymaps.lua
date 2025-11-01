@@ -3,7 +3,6 @@ vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
 
 vim.keymap.set("n", "<leader>ee", "<cmd>Oil --float<CR>")
--- vim.keymap.set("n", "<leader>ee", "<cmd>Fyler kind=split_right<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -58,14 +57,10 @@ vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
 -- Map <leader>` to insert a multi-line code block
 --- Normal Mode Mapping
 vim.keymap.set("n", "<leader>`", "i```<CR>```<ESC>kA", {
-  noremap = true,
-  silent = true,
   desc = "Insert markdown code block for language"
 })
 
 --- Insert Mode Mapping
-vim.keymap.set("i", "<leader>`", "```<CR>```<ESC>kA", {
-  noremap = true,
-  silent = true,
+vim.keymap.set("i", "<m-`>", "```<CR>```<ESC>kA", {
   desc = "Insert markdown code block for language"
 })
