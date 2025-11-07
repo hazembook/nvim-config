@@ -14,6 +14,21 @@ return {
     },
 
     config = function(_)
+      vim.lsp.config.pyright = {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { '*' },
+            },
+          },
+        },
+      }
+
       vim.lsp.enable("bashls")
       vim.lsp.enable("clangd")
       vim.lsp.enable("denols")
@@ -25,6 +40,7 @@ return {
       vim.lsp.enable("pyright")
       vim.lsp.enable("rubocop")
       vim.lsp.enable("ruby_lsp")
+      vim.lsp.enable("ruff")
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("texlab")
       vim.lsp.enable("tinymist")
