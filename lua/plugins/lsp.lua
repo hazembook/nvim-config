@@ -29,11 +29,22 @@ return {
         },
       }
 
+      vim.lsp.config.harper_ls = {
+        settings = {
+          ["harper-ls"] = {
+            linters = {
+              SentenceCapitalization = false,
+              SpellCheck = false
+            }
+          }
+        },
+      }
+
       vim.lsp.enable("bashls")
       vim.lsp.enable("clangd")
       vim.lsp.enable("denols")
       vim.lsp.enable("gopls")
-      vim.lsp.enable("harper_ls")
+      -- vim.lsp.enable("harper_ls")
       vim.lsp.enable("herb_ls")
       vim.lsp.enable("html")
       vim.lsp.enable("lua_ls")

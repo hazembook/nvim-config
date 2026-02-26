@@ -1,9 +1,11 @@
 return {
   "ellisonleao/gruvbox.nvim",
+  -- "Shatur/neovim-ayu",
   priority = 1000,
   config = function()
     -- Default options:
     require("gruvbox").setup({
+    -- require("ayu").setup({
       terminal_colors = true, -- add neovim terminal colors
       undercurl = true,
       underline = true,
@@ -27,5 +29,6 @@ return {
       transparent_mode = false,
     })
     vim.cmd.colorscheme("gruvbox")
+    -- vim.cmd.colorscheme("ayu")
   end
 }
