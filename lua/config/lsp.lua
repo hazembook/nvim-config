@@ -36,15 +36,11 @@ vim.lsp.config('harper_ls', {
 })
 
 -- Native 0.12 Server Enablement
-local servers = {
+vim.lsp.enable({
   "bashls", "clangd", "denols", "gopls", "herb_ls",
   "html", "lua_ls", "pyright", "rubocop", "ruby_lsp",
   "ruff", "rust_analyzer", "texlab", "tinymist", "zls"
-}
-
-for _, server in ipairs(servers) do
-  vim.lsp.enable(server)
-end
+})
 
 -- Diagnostic Config
 vim.diagnostic.config({
