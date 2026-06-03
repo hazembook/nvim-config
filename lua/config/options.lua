@@ -28,3 +28,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "140"
+
+vim.opt.diffopt:append("inline:word")
