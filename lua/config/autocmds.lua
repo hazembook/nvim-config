@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({
       bufnr = args.buf,
       filter = function(client)
-        return client.supports_method("textDocument/formatting")
+        return client:supports_method("textDocument/formatting")
       end,
     })
   end,

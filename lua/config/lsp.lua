@@ -37,9 +37,22 @@ vim.lsp.config('harper_ls', {
 
 -- Native 0.12 Server Enablement
 vim.lsp.enable({
-  "bashls", "clangd", "denols", "gopls", "herb_ls",
-  "html", "lua_ls", "pyright", "rubocop", "ruby_lsp",
-  "ruff", "rust_analyzer", "texlab", "tinymist", "zls"
+  "bashls",
+  "clangd",
+  "denols",
+  "gopls",
+  "herb_ls",
+  "html",
+  "lua_ls",
+  "nil_ls",
+  "pyright",
+  "rubocop",
+  "ruby_lsp",
+  "ruff",
+  "rust_analyzer",
+  "texlab",
+  "tinymist",
+  "zls",
 })
 
 -- Diagnostic Config
